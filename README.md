@@ -38,11 +38,11 @@ Configuration on my i3wm
 ## Fonts
 Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-complete">Nerd Font Complete</a> But it was wasting my storage, for you i'll give you fonts that really needs. <b>Make sure to check in bellow of theme list</b> 
 
-#### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM for 2 weeks)
+#### Note : Unfortunatelly im still have 1 theme configuration in there. (i just used this WM for 2 weeks)
 
 ## Deep purple
 ![Deep Purple 1](/ss/Deeppurple1.png)
-#### Polybar Fonts :
+### Polybar Fonts :
 - <a href="/config/polybar/fonts">mononoki-Regular Nerd Font</a>
 - <a href="/config/polybar/fonts">icomoon-feather</a>
 - <a href="/config/polybar/fonts">icoomoon-free</a>
