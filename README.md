@@ -13,7 +13,7 @@ Configuration on my i3wm
 <td><code>(AUR) i3-gaps-rounded-git</code></td><td>Allowing i3-gaps to go in rounded mode</td>
 </tr>
 <tr>
-<td><code>URxvt</code></td><td>My primary terimnal</td>
+<td><code>URxvt</code></td><td>My primary terminal</td>
 </tr>
 <tr>
 <td><code>mpd & ncmpcpp & mpc</code></td><td>Music daemon and media player for mpd</td>
@@ -27,9 +27,18 @@ Configuration on my i3wm
 <tr>
 <td><code>networkmanager_dmenu</code></td><td>Network manager applet but based on rofi (its cool)</td>
 </tr>
+<tr>
+<td><code>firefox</code></td><td>Browser (fu*k chrome)</td>
+</tr>
+<tr>
+<td><code>picom</code></td><td>Compositor</td>
+</tr>
 </table>
 
-#### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM 2 weeks)
+## Fonts
+Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-complete">Nerd Font Complete</a> But it was wasting my storage, for you i'll give you fonts that really needs. <b>Make sure to check in bellow of theme list</b> 
+
+#### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM for 2 weeks)
 
 ## Deep purple
 ![Deep Purple 1](https://github.com/ledleledle/i3-gaps-dotfiles/blob/master/ss/Deeppurple1.png)
