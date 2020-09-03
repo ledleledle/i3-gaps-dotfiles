@@ -42,9 +42,8 @@ Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-com
 
 ## Deep purple
 ![Deep Purple 1](/ss/Deeppurple1.png)
-### Polybar Fonts :
+Fonts :
 - <a href="/config/polybar/fonts">mononoki-Regular Nerd Font</a>
 - <a href="/config/polybar/fonts">icomoon-feather</a>
 - <a href="/config/polybar/fonts">icoomoon-free</a>
-### URxvt
 - <a href="/fonts/myosevka">Iosevka Custom</a> (sorry i forgot where i got this fonts, i'll update soon as posible)
