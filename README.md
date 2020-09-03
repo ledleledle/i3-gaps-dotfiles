@@ -41,4 +41,8 @@ Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-com
 #### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM for 2 weeks)
 
 ## Deep purple
-![Deep Purple 1](https://github.com/ledleledle/i3-gaps-dotfiles/blob/master/ss/Deeppurple1.png)
+![Deep Purple 1](blob/master/ss/Deeppurple1.png)
+#### Polybar Fonts :
+- <a href="blob/master/config/polybar/fonts">mononoki-Regular Nerd Font</a>
+- <a href="blob/master/config/polybar/fonts">icomoon-feather</a>
+- <a href="blob/master/config/polybar/fonts">icoomoon-free</a>
