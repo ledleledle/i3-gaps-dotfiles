@@ -24,6 +24,9 @@ Configuration on my i3wm
 <tr>
 <td><code>rofi</code></td><td>Minimalist menu launcher</td>
 </tr>
+<tr>
+<td><code>networkmanager_dmenu</code></td><td>Network manager applet but based on rofi (its cool)</td>
+</tr>
 </table>
 
 #### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM 2 weeks)
