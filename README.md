@@ -27,4 +27,4 @@ Configuration on my i3wm
 #### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM 2 weeks)
 
 ## Deep purple
-![Deep Purple 1](https://raw.githubusercontent.com/ledleledle/dotfiles/master/ss/Deeppurple1.png)
+![Deep Purple 1](https://github.com/ledleledle/i3-gaps-dotfiles/blob/master/ss/Deeppurple1.png)
