@@ -1,0 +1,11 @@
+#!/bin/bash
+
+rofi -modi drun \
+-lines 20 \
+-padding 20 \
+-width 28 \
+-location 1 -xoffset 10 -yoffset 40 \
+-show drun \
+-columns 1 \
+-font "Cantarell 10" \
+-show-icons -icon-theme "Flatery-Dark"
