@@ -2,6 +2,7 @@
 Configuration on my i3wm
 
 ## Complete dependencies
+<table>
 <tr>
 <td><code>polybar</code></td><td>My primary bar</td>
 </tr>
@@ -23,6 +24,7 @@ Configuration on my i3wm
 <tr>
 <td><code>rofi</code></td><td>Minimalist menu launcher</td>
 </tr>
+</table>
 
 #### Unfortunatelly im still have 1 theme configuration in there. (i just used this WM 2 weeks)
 
