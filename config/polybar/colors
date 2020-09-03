@@ -1,0 +1,12 @@
+[colors]
+background = #2F343F
+background-alt = #444
+
+; === Font color ===
+foreground = #dfdfdf
+; === Icon color ===
+foreground-alt = #dfdfdf
+
+primary = #9F78E1
+secondary = #FBDECC
+alert = #9F78E1
