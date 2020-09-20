@@ -55,3 +55,6 @@ Color included at <code>xrdb<code> folder, copy my <code>.Xresources</code> conf
 
 ## Light Blue
 ![Deep Purple 1](/ss/lightblue.png)
+#### What i used :
+- Polybar2
+- For color, <code>mostly-bright</code>
