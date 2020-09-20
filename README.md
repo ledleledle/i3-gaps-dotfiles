@@ -39,7 +39,7 @@ Configuration on my i3wm. BtW I uSE ArCH!!!
 Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-complete">Nerd Font Complete</a> But it was wasting my storage, for you i'll give you fonts that really needs. <b>Make sure to check in bellow of theme list</b>. Copy font in <code>/usr/share/fonts</code> or <code>~/.local/share/fonts</code> then run <code>fc-cache -f -v</code>
 
 ## URxvt and Rofi color
-Color included at <code>xrdb<code> folder, copy my <code>.Xresources</code> config, and edit <code>colors</code>.
+Color included at <code>xrdb</code> folder, copy my <code>.Xresources</code> config, and edit <code>colors</code>.
 
 ## Deep purple
 ![Deep Purple 1](/ss/Deeppurple1.png)
