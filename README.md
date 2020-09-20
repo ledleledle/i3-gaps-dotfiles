@@ -38,13 +38,20 @@ Configuration on my i3wm. BtW I uSE ArCH!!!
 ## Fonts
 Basically i installed <a href="https://aur.archlinux.org/packages/nerd-fonts-complete">Nerd Font Complete</a> But it was wasting my storage, for you i'll give you fonts that really needs. <b>Make sure to check in bellow of theme list</b>. Copy font in <code>/usr/share/fonts</code> or <code>~/.local/share/fonts</code> then run <code>fc-cache -f -v</code>
 
-#### Note : Unfortunatelly im still have 1 theme configuration in there. (i just used this WM for 2 weeks)
+## URxvt and Rofi color
+Color included at <code>xrdb<code> folder, copy my <code>.Xresources</code> config, and edit <code>colors</code>.
 
 ## Deep purple
 ![Deep Purple 1](/ss/Deeppurple1.png)
 ![Deep Purple 2](/ss/Deeppurple2.png)
+#### What i used :
+- Polybar1
+- For color, <code>nord-purple</code>
 #### Fonts :
-- <a href="/config/polybar/fonts">mononoki-Regular Nerd Font</a>
-- <a href="/config/polybar/fonts">icomoon-feather</a>
-- <a href="/config/polybar/fonts">icoomoon-free</a>
-- <a href="/fonts/myosevka">Iosevka Custom</a> (sorry i forgot where i got this fonts, i'll update soon as posible)
+- <a href="/config/polybar/polybar1/fonts">mononoki-Regular Nerd Font</a>
+- <a href="/config/polybar/polybar1/fonts">icomoon-feather</a>
+- <a href="/config/polybar/polybar1/fonts">icoomoon-free</a>
+- <a href="/fonts/polybar1/myosevka">Iosevka Custom</a>
+
+## Light Blue
+![Deep Purple 1](/ss/lightblue.png)

@@ -16,47 +16,64 @@
 ;
 ;==========================================================
 
-include-file = ~/.config/polybar/colors
+[colors]
+background = #fdfdfd
+background-alt = #fdfdfd
+
+; === Font color ===
+foreground = #5d5d5a
+; === Icon color ===
+foreground-alt = #5d5d5a
+
+blue = #337AFF
+blue-1 = #87B7FF
+white = #FFFFFF
+
+secondary = #ffcef3
+alert = #ffcef3
 
 [bar/fullbar]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 30
 offset-x = 0%
 offset-y = 0%
-radius = 0.0
+radius = 5.0
 fixed-center = false
-
+ 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+bottom = true
 
-border-size = 0
-border-color = #00000000
+line-size = 3
+line-color = ${colors.foreground}
+
+border-size = 5
+;border-color = ${colors.background}
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = mononoki Nerd Font Mono:size=8;3
-font-1 = icomoon\-feather:pixelsize=9;3:antialias=false
-font-2 = IcoMoon\-Free:pixelsize=9;3:antialias=false
+font-0 = FantasqueSansMono Nerd Font Mono:size=10;3 
+font-1 = Material Icons:pixelsize=12;4:antialias=false
+font-2 = FantasqueSansMono Nerd Font Mono:style=Bold:size=10;3
+font-3 = icomoon\-feather:size=10;3
 
-modules-left = launcher i3
-modules-center = mpd
-#modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date powermenu
-modules-right = xbacklight pulseaudio wlan eth battery date
+modules-left = launcher mpd
+modules-center = i3
+#modules-right = filesystem xbacklight alsa pulseaudio memory cpu wlan eth battery temperature date power
+modules-right = xbacklight pulseaudio wlan eth battery date power
 
-tray-position = right
-tray-padding = 2
+;tray-position = right
+;tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 override-redirect = false
 
@@ -88,7 +105,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.blue}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -111,25 +128,32 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-default = 
+
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
 label-mode-padding = 2
 label-mode-foreground = #000
-label-mode-background = ${colors.primary}
+label-mode-background = ${colors.blue}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index%
+label-focused = %{F#337AFF}%icon%%{F-}
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.blue}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
+label-unfocused = %icon%
 label-unfocused-padding = 2
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index%
+label-visible = %{F#337AFF}%index%%{F-}
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
@@ -145,34 +169,36 @@ label-urgent-padding = 2
 
 [module/mpd]
 type = internal/mpd
-format-online = <label-song>  <icon-prev> <toggle> <icon-next>
-format-offline = "MPD Off"
+;format-online = <label-song>  <icon-prev> <toggle> <icon-next>
+format-online = <label-song>
 
-icon-prev = 
-icon-play = 
+format-offline = %{F#FF2F28}%{F-} MPD Offline
+
+icon-prev = 
+icon-play = 
 icon-pause = 
-icon-next = 
+icon-next = 
 
-label-song =  %artist% - %title%
-label-song-maxlen = 25
+label-song = %{F#FF5BDB}%{F-} %artist% - %title%
+label-song-maxlen = 40
 label-song-ellipsis = true
 
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = 
+format = <label>
+label = %{F#FF5B30}%{F-} %percentage%%
 
-bar-width = 8
-bar-indicator = 
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = 
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = 
-bar-empty-font = 2
-bar-empty-foreground = ${colors.foreground-alt}
+;bar-width = 8
+;bar-indicator = 
+;bar-indicator-foreground = #fff
+;bar-indicator-font = 2
+;bar-fill = 
+;bar-fill-font = 2
+;bar-fill-foreground = #9f78e1
+;bar-empty = 
+;bar-empty-font = 2
+;bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -202,19 +228,20 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 ;format-connected-underline = #9f78e1
-label-connected = %essid% %downspeed:9% %upspeed:9%
+;label-connected = %{A1:networkmanager_dmenu &:}%essid% %downspeed%|%upspeed%%{A}
+label-connected = %{A1:networkmanager_dmenu &:}%{T3}%downspeed%%{T-}. %essid%%{A}
 
-format-disconnected =  Disconnected
+format-disconnected = %{A1:networkmanager_dmenu &:}%{F#FF2C20}%{F-} Disconnected%{A}
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-0 = %{F#B21034}%{F-}
+ramp-signal-1 = %{F#FF5D81}%{F-}
+ramp-signal-2 = %{F#1B9ECC}%{F-}
+ramp-signal-3 = %{F#0088CC}%{F-}
+ramp-signal-4 = %{F#006EB2}%{F-}
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -235,47 +262,32 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1.0
 
 date = 
-date-alt = " %d-%m-%Y"
+date-alt =  %d-%m-%Y
 
-time = %H:%M
+time = %{F#FF6413}%{F-} %H:%M
 time-alt = %H:%M
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 ;format-underline = #0a6cf5
 
-label = %date% %time%
+label = %date% %time%
+
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
-;label-volume =  %percentage%%
-label-volume = 
+;format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
+label-volume = %{A3:pavucontrol &:}%{F#05B234}%{F-} %percentage%%%{A}
+;label-volume = %{A3:pavucontrol &:}%{A}
 label-volume-foreground = ${root.foreground}
 
-label-muted =  
+label-muted = %{A3:pavucontrol &:} Muted%{A}
 label-muted-foreground = #666
-
-bar-volume-width = 8
-bar-volume-foreground-0 = #9F78E1
-bar-volume-foreground-1 = #9F78E1
-bar-volume-foreground-2 = #9F78E1
-bar-volume-foreground-3 = #9F78E1
-bar-volume-foreground-4 = #f5a70a
-bar-volume-foreground-5 = #ff5555
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
-bar-volume-indicator = 
-bar-volume-indicator-font = 2
-bar-volume-fill = 
-bar-volume-fill-font = 2
-bar-volume-empty = 
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
 type = internal/alsa
@@ -316,28 +328,23 @@ format-charging = <animation-charging> <label-charging>
 
 ;format-discharging = <animation-discharging> <label-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
-;format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${colors.foreground-alt}
 
-format-full-prefix = " Charged "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 ;format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+label-discharging = %percentage%%
+ramp-capacity-0 = %{F#FF5D81}%{F-}
+ramp-capacity-1 = %{F#1B9ECC}%{F-}
+ramp-capacity-2 = %{F#0184B2}%{F-}
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-0 = %{F#FF5D81}%{F-}
+animation-charging-1 = %{F#1F92B2}%{F-}
+animation-charging-2 = %{F#FF1D4B}%{F-}
+;animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
-
-;animation-discharging-0 = 
-;animation-discharging-1 = 
-;animation-discharging-2 = 
-;animation-discharging-foreground = ${colors.foreground-alt}
-;animation-discharging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
@@ -360,41 +367,21 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/launcher]
 type = custom/text
-content =  Menu
+content = ""
 
-content-background = ${colors.primary}
-content-foreground = ${colors.foreground}
-content-padding = 2
-click-left = rofi-apps
+content-background = ${colors.blue}
+content-foreground = ${colors.white}
+content-padding = 1
+click-left = appsmenu
 
-[module/powermenu]
-type = custom/menu
+[module/power]
+type = custom/text
+content = ""
 
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
+content-background = ${colors.blue}
+content-foreground = ${colors.white}
+content-padding = 1
+click-left = powermenu
 
 [settings]
 screenchange-reload = true
